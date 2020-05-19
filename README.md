@@ -2,6 +2,7 @@ Integration Project Milestone 1:
 -Add your name as a comment at top of every file
 Line 1>
 // Stephanie Ali
+
 -Add a description of the program as a comment at top
 Line 3>
 /* Choose the correct capital for each state. 
