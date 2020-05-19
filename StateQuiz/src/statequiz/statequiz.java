@@ -31,7 +31,7 @@ public class statequiz {
 	Scanner scan = new Scanner(System.in);
 	
 	//Introduction
-	System.out.println("States Quiz");
+	System.out.println("States & Capitals Quiz");
 	System.out.println("");
 	System.out.println("Choose the correct capital for each state.");
 	System.out.println("For each question you answer correct, you gain 1 point.");
