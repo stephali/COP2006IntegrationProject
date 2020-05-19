@@ -202,6 +202,8 @@ public class statequiz {
 	System.out.println("\n\n\n\n\n\n\n\n");
 	System.out.println("Your score is " + (score) + "/5");
 	double scorePercentage = ((double)score/5)*100;
+	/*Casting: used when you want to represent a variable's data type as a different data type.
+	 Ex: the variable "score" is declared as an int but then it is changed to a double*/
 	System.out.println((int)scorePercentage + "%");	
 	System.out.println("\n\n\n\n\n\n\n\n");
 
