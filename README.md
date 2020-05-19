@@ -1,6 +1,6 @@
 # States Quiz
 
-## Milestone 1:
+## Milestone 1
 
 **Add your name as a comment at top of every file**  
 Line 1>
