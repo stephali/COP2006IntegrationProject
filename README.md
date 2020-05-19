@@ -1,4 +1,5 @@
 Integration Project Milestone 1:
+
 -Add your name as a comment at top of every file
 Line 1>
 // Stephanie Ali
@@ -7,6 +8,7 @@ Line 1>
 Line 3>
 /* Choose the correct capital for each state. 
    For each question you answer correct, you gain 1 point. */
+   
 -Add a list and description of Java built-in data types within the user interface or in comments
 Line 6>
 /* Primitive Data Types
@@ -18,6 +20,7 @@ Line 6>
    double: holds a decimal value > stores up to 15 digits
    boolean: declares a variable true or false
    char: holds letter characters > ASCII */
+   
 -Add a greeting / introduction to the user
 Line 36>
 System.out.println("Choose the correct capital for each state.");
