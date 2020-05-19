@@ -44,11 +44,13 @@ Line 117>
 String userInput = scan.next();
 
 **Define (in English) the term "variable" as it relates to computer programming in a comment or the user interface**  
+Line 27>
 /* A variable is a placeholder for something. 
 	On line 14, the variable score is defined as an integer that holds the number 0.
 	If the variable score is used later on, it will represent the number 0. */
 	
 **Define (in English) the term "scope" as it relates to computer programming in a comment or the user interface**  
+Line 16>
 /* Scope refers to the accessibility of a variable. How large the scope is depends on where the variable was declared.*/
 
 **Use casting and describe what it means in a comment (optional for 1, required for 2)**  
