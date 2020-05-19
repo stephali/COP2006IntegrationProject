@@ -1,4 +1,4 @@
-# States Quiz
+# States & Capitals Quiz
 
 ## Milestone 1
 
