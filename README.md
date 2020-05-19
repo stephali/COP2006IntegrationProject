@@ -24,24 +24,31 @@ Line 6>
 -Add a greeting / introduction to the user
 Line 36>
 System.out.println("Choose the correct capital for each state.");
+
 -Use a boolean variable with an appropriate name  (singular noun, lowerCamelCase)
 Line 40>
 boolean question1 = true;
+
 -Use an int variable with an appropriate name (singular noun, lowerCamelCase)
 Line 26>
 int score = 0;
+
 -Use an double variable with an appropriate name (singular noun, lowerCamelCase)
 Line 204>
 double scorePercentage = ((double)score/5)*100;
+
 -Use a String object with an appropriate name (singular noun, lowerCamelCase)
 Line 117>
 String userInput = scan.next();
+
 -Define (in English) the term "variable" as it relates to computer programming in a comment or the user interface
 /* A variable is a placeholder for something. 
 	On line 14, the variable score is defined as an integer that holds the number 0.
 	If the variable score is used later on, it will represent the number 0. */
+	
 -Define (in English) the term "scope" as it relates to computer programming in a comment or the user interface
 /* Scope refers to the accessibility of a variable. How large the scope is depends on where the variable was declared.*/
+
 -Use casting and describe what it means in a comment (optional for 1, required for 2)
 Line 204>
 /*Casting: used when you want to represent a variable's data type as a different data type.
