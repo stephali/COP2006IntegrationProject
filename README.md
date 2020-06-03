@@ -60,55 +60,85 @@ Line 204>
 
 ## Milestone 2
 **Create a method with arguments and return values**  
-
+Line 79>
+public static int getQuestion(String state, int score, String answer, String[] choiceArray) {
 
 **Identify a method call and argument in comments**  
- 
+ Line 47> Line 52>
+ playerScore = getQuestion("Alabama", playerScore, "Montgomery", choiceArray);
  
 **Identify a header and parameter in comments**  
-
+Line 77>
+// This next line is the header for the method
+	public static int getQuestion(String state, int score, String answer, String[] choiceArray) {
 
 **Use the Random class**  
-
+Line 81>
+int randChoiceOne = rand.nextInt(14) + 1;
+int randChoiceTwo = rand.nextInt(14) + 1;
+int randChoiceThree = rand.nextInt(14) + 1;
+int randPosition = rand.nextInt(3) + 1;
 
 **Use the Math class**  
 
 
 **Create if/else constructs**  
-
+Line 126>
+if ((userInput.toUpperCase()).equals(correctChoice)) {
+	System.out.println("Correct\n");
+	score += 1;
+	break;
+	// == method checks for the instances of the two objects not the actual value
+	// while equals does check for the value
+	} else if (!(userInput.toUpperCase()).equals(correctChoice)) {
+	System.out.println("Incorrect");
+	break; // break takes you out of a loop
+	} else {
+	System.out.println("Wrong entry. Choose A, B, C, or D.\n");
+	}
 
 **Create ternary constructs**  
 
 
 **Use a switch statement**  
-
+Line 91>
+switch (randPosition) {
 
 **Compare two String objects by using the compareTo and equals methods and make a comment describing how == works with objects**  
-
+Line 130>
+// == method checks for the instances of the two objects not the actual value while equals does check for the value
+} else if (!(userInput.toUpperCase()).equals(correctChoice)) {
 
 **Use +, -, *, /, %, ++, --, +=**  
-
+Throughout
 
 **Use relational operators**  
-
+Line 62>
+for (int i = 0; i < end.length(); i++) {
 
 **Use conditional operators**  
-
+Line 131>
+} else if (!(userInput.toUpperCase()).equals(correctChoice)) {
 
 **Describe operator precedence as a comment**  
-
+Line 18>
+// Operator precedence determines the order operators in an expression are evaluated
 
 **Create and use while loops**  
-
+Line 79>
+while (true) {
 
 **Create and use for loops**  
-
+Line 62>
+for (int i = 0; i < end.length(); i++) {
 
 **Create and use do/while loops**  
 
 
 **Use break in a loop with a comment describing what it does**  
-
+Line 133>
+break; // break takes you out of a loop
 
 **Use continue in a loop with a comment describing what it does**  
-
+Line 65>
+continue; // continue jumps to the conditional statement for the loop
