@@ -142,3 +142,50 @@ break; // break takes you out of a loop
 **Use continue in a loop with a comment describing what it does**  
 Line 65>
 continue; // continue jumps to the conditional statement for the loop
+
+## Milestone 3
+
+**Make a class in a separate file with private fields, public getters and setters, a constructor with and without parameters**  
+Score.java & Questions.java
+
+**Overload a method**  
+line 11>  
+public String getScoreString() {
+    return Integer.toString(Score) + scoreString;
+   
+**Describe inheritance and its benefits**  
+line 23>  
+/*
+ * Inheritance is a mechanism in java that allows classes to inherit (or use) other classes fields &
+ * methods. It is very beneficial because instead of writing the same code over and over for each
+ * class, you can just inherit all the features you need from a parent class. It saves up more
+ * space.
+ */
+   
+**Describe polymorphism**  
+line 30>  
+/*
+ * Polymorphism is when objects take on many forms. For example, the parent class sets attributes
+ * for all of it's child classes. Polymorphism is when a class changes attributes that the parent
+ * class had already set.
+ */
+
+**Declare, instantiate, initialize and use a one-dimensional array**  
+line 49>  
+ String[] choiceArray = new String[] {"Albany", "Annapolis", "Atlanta", "Augusta", "Austin",
+        "Baton Rouge", "Bismarck", "Boise", "Boston", "Carson City", "Cheyenne", "Columbia",
+        "Columbus", "Concord", "Denver"};
+
+**Declare, instantiate, initialize and use multi-dimensional arrays**  
+line 52>  
+  String[][] stateAndCapitalsArray = {{"Alabama", "Alaska", "Arizona", "Arkansas", "California"},
+        {"Montgomery", "Juneau", "Phoenix", "Little Rock", "Sacramento"}};
+    /*
+
+**Effectively utilize exception handling for user input of an int**  
+line 103>  
+public static void sleep(int time) {
+    try {
+      Thread.sleep(time);
+    } catch (Exception e) {
+    }
