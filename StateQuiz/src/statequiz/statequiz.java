@@ -13,11 +13,27 @@
  * or false char: holds letter characters > ASCII
  */
 
-// Scope refers to the accessibility of a variable. How large the scope is depends on where the
-// variable was declared.
+/*
+ * Scope refers to the accessibility of a variable. How large the scope is depends on where the
+ * variable was declared.
+ */
 
 // Operator precedence determines the order operators in an expression are evaluated
 
+/*
+ * Inheritance is a mechanism in java that allows classes to inherit (or use) other classes fields &
+ * methods. It is very beneficial because instead of writing the same code over and over for each
+ * class, you can just inherit all the features you need from a parent class. It saves up more
+ * space.
+ */
+
+/*
+ * Polymorphism is when objects take on many forms. For example, the parent class sets attributes
+ * for all of it's child classes. Polymorphism is when a class changes attributes that the parent
+ * class had already set.
+ */
+
+// super is a reference to the base (parent) class
 package statequiz;
 
 import java.util.Random;
@@ -26,8 +42,15 @@ import java.util.Scanner;
 public class StateQuiz {
 
   public static void main(String[] args) {
+    Score s = new Score();
+    Questions q = new Questions();
 
     int playerScore = 0;
+    String[] choiceArray = new String[] {"Albany", "Annapolis", "Atlanta", "Augusta", "Austin",
+        "Baton Rouge", "Bismarck", "Boise", "Boston", "Carson City", "Cheyenne", "Columbia",
+        "Columbus", "Concord", "Denver"};
+    String[][] stateAndCapitalsArray = {{"Alabama", "Alaska", "Arizona", "Arkansas", "California"},
+        {"Montgomery", "Juneau", "Phoenix", "Little Rock", "Sacramento"}};
     /*
      * A variable is a placeholder for something. On line 14, the variable score is defined as an
      * integer that holds the number 0. If the variable score is used later on, it will represent
@@ -43,22 +66,27 @@ public class StateQuiz {
 
     // Questions
 
-    String[] choiceArray = new String[] {"Albany", "Annapolis", "Atlanta", "Augusta", "Austin",
-        "Baton Rouge", "Bismarck", "Boise", "Boston", "Carson City", "Cheyenne", "Columbia",
-        "Columbus", "Concord", "Denver"};
+
     /*
      * method call is getQuestion and the argument is what is inside the parentheses the state will
      * be a string, the score an int, the answer a string, and choiceArray in string
      */
-    playerScore = getQuestion("Alabama", playerScore, "Montgomery", choiceArray);
-    playerScore = getQuestion("Alaska", playerScore, "Juneau", choiceArray);
-    playerScore = getQuestion("Arizona", playerScore, "Phoenix", choiceArray);
-    playerScore = getQuestion("Arkansas", playerScore, "Little Rock", choiceArray);
-    playerScore = getQuestion("California", playerScore, "Sacramento", choiceArray);
 
-    System.out.println("Your score is " + playerScore + "/5");
 
-    if (playerScore == 5) {
+    q.setQuestion(stateAndCapitalsArray[0][0], stateAndCapitalsArray[1][0], choiceArray, s);
+    q.prompt();
+    q.setQuestion(stateAndCapitalsArray[0][1], stateAndCapitalsArray[1][1], choiceArray, s);
+    q.prompt();
+    q.setQuestion(stateAndCapitalsArray[0][2], stateAndCapitalsArray[1][2], choiceArray, s);
+    q.prompt();
+    q.setQuestion(stateAndCapitalsArray[0][3], stateAndCapitalsArray[1][3], choiceArray, s);
+    q.prompt();
+    q.setQuestion(stateAndCapitalsArray[0][4], stateAndCapitalsArray[1][4], choiceArray, s);
+    q.prompt();
+
+    System.out.println("Your score is " + s.getScoreString());
+
+    if (s.getScore() == 5) {
       String end = "Perfect Score!";
       for (int i = 0; i < end.length(); i++) {
         System.out.print(end.charAt(i));
@@ -68,77 +96,15 @@ public class StateQuiz {
     }
   }
 
+
   public static void sleep(int time) {
     try {
       Thread.sleep(time);
     } catch (Exception e) {
     }
+
   }
 
-  // This next line is the header for the method
-  public static int getQuestion(String state, int score, String answer, String[] choiceArray) {
-    while (true) {
-      Scanner scan = new Scanner(System.in);
-      Random rand = new Random();
-
-      int randChoiceOne = rand.nextInt(14) + 1;
-      int randChoiceTwo = rand.nextInt(14) + 1;
-      int randChoiceThree = rand.nextInt(14) + 1;
-      int randPosition = rand.nextInt(3) + 1;
-
-      System.out.println("What is the capital of " + state + "?\n");
-      String correctChoice = "";
-
-      switch (randPosition) {
-        case 0:
-          System.out.println("A. " + answer);
-          System.out.println("B. " + choiceArray[randChoiceOne]);
-          System.out.println("C. " + choiceArray[randChoiceTwo]);
-          System.out.println("D. " + choiceArray[randChoiceThree]);
-          correctChoice = "A";
-          break;
-        case 1:
-          System.out.println("A. " + choiceArray[randChoiceOne]);
-          System.out.println("B. " + answer);
-          System.out.println("C. " + choiceArray[randChoiceTwo]);
-          System.out.println("D. " + choiceArray[randChoiceThree]);
-          correctChoice = "B";
-          break;
-        case 2:
-          System.out.println("A. " + choiceArray[randChoiceOne]);
-          System.out.println("B. " + choiceArray[randChoiceTwo]);
-          System.out.println("C. " + answer);
-          System.out.println("D. " + choiceArray[randChoiceThree]);
-          correctChoice = "C";
-          break;
-        case 3:
-          System.out.println("A. " + choiceArray[randChoiceOne]);
-          System.out.println("B. " + choiceArray[randChoiceTwo]);
-          System.out.println("C. " + choiceArray[randChoiceThree]);
-          System.out.println("D. " + answer);
-          correctChoice = "D";
-          break;
-      }
-
-      System.out.println("\nType in the letter choice.");
-
-      String userInput = scan.next();
-
-      if ((userInput.toUpperCase()).equals(correctChoice)) {
-        System.out.println("Correct\n");
-        score += 1;
-        break;
-        // == method checks for the instances of the two objects not the actual value while equals
-        // does check for the value
-      } else if (!(userInput.toUpperCase()).equals(correctChoice)) {
-        System.out.println("Incorrect");
-        break; // break takes you out of a loop
-      } else {
-        System.out.println("Wrong entry. Choose A, B, C, or D.\n");
-      }
-    }
-    return score;
-  }
 }
 
 /*
