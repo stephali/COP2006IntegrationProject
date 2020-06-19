@@ -34,25 +34,26 @@
  */
 
 // super is a reference to the base (parent) class
+
 package statequiz;
 
-import java.util.Random;
-import java.util.Scanner;
-
+/**
+ * This class stores the arrays that calls the Questions file.
+ * 
+ * @author Stephanie Ali
+ *
+ */
 public class StateQuiz {
 
+  /**
+   * This is the main file for StateQuiz.
+   * 
+   * @param args Questions
+   */
   public static void main(String[] args) {
-    Score s = new Score();
-    Questions q = new Questions();
 
-    int playerScore = 0;
-    String[] choiceArray = new String[] {"Albany", "Annapolis", "Atlanta", "Augusta", "Austin",
-        "Baton Rouge", "Bismarck", "Boise", "Boston", "Carson City", "Cheyenne", "Columbia",
-        "Columbus", "Concord", "Denver"};
-    String[][] stateAndCapitalsArray = {{"Alabama", "Alaska", "Arizona", "Arkansas", "California"},
-        {"Montgomery", "Juneau", "Phoenix", "Little Rock", "Sacramento"}};
     /*
-     * A variable is a placeholder for something. On line 14, the variable score is defined as an
+     * A variable is a placeholder for something. On line 57, the variable score is defined as an
      * integer that holds the number 0. If the variable score is used later on, it will represent
      * the number 0.
      */
@@ -66,27 +67,39 @@ public class StateQuiz {
 
     // Questions
 
-
     /*
      * method call is getQuestion and the argument is what is inside the parentheses the state will
      * be a string, the score an int, the answer a string, and choiceArray in string
      */
+    Score scoreObject = new Score();
+    Questions q = new Questions();
 
+    String[] choiceArray = new String[] {"Albany", "Annapolis", "Atlanta", "Augusta", "Austin",
+        "Baton Rouge", "Bismarck", "Boise", "Boston", "Carson City", "Cheyenne", "Columbia",
+        "Columbus", "Concord", "Denver"};
+    String[][] stateAndCapitalsArray = {{"Alabama", "Alaska", "Arizona", "Arkansas", "California"},
+        {"Montgomery", "Juneau", "Phoenix", "Little Rock", "Sacramento"}};
 
-    q.setQuestion(stateAndCapitalsArray[0][0], stateAndCapitalsArray[1][0], choiceArray, s);
+    q.setQuestion(stateAndCapitalsArray[0][0], stateAndCapitalsArray[1][0], choiceArray,
+        scoreObject);
     q.prompt();
-    q.setQuestion(stateAndCapitalsArray[0][1], stateAndCapitalsArray[1][1], choiceArray, s);
+    q.setQuestion(stateAndCapitalsArray[0][1], stateAndCapitalsArray[1][1], choiceArray,
+        scoreObject);
     q.prompt();
-    q.setQuestion(stateAndCapitalsArray[0][2], stateAndCapitalsArray[1][2], choiceArray, s);
+    q.setQuestion(stateAndCapitalsArray[0][2], stateAndCapitalsArray[1][2], choiceArray,
+        scoreObject);
     q.prompt();
-    q.setQuestion(stateAndCapitalsArray[0][3], stateAndCapitalsArray[1][3], choiceArray, s);
+    q.setQuestion(stateAndCapitalsArray[0][3], stateAndCapitalsArray[1][3], choiceArray,
+        scoreObject);
     q.prompt();
-    q.setQuestion(stateAndCapitalsArray[0][4], stateAndCapitalsArray[1][4], choiceArray, s);
+    q.setQuestion(stateAndCapitalsArray[0][4], stateAndCapitalsArray[1][4], choiceArray,
+        scoreObject);
     q.prompt();
 
-    System.out.println("Your score is " + s.getScoreString());
+    System.out.println("Your score is " + scoreObject.getScoreString());
 
-    if (s.getScore() == 5) {
+    // this stops the program to print out Perfect Score! slowly in second intervals
+    if (scoreObject.getScore() == 5) {
       String end = "Perfect Score!";
       for (int i = 0; i < end.length(); i++) {
         System.out.print(end.charAt(i));
@@ -96,11 +109,16 @@ public class StateQuiz {
     }
   }
 
-
+  /**
+   * Sleep is a function that lays out the characters in "Perfect Score!" in one second intervals.
+   * 
+   * @param time sleep
+   */
   public static void sleep(int time) {
     try {
       Thread.sleep(time);
     } catch (Exception e) {
+      System.out.println("Exception");
     }
 
   }
