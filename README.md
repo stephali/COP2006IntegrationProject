@@ -73,7 +73,7 @@ Line 77>
 	public static int getQuestion(String state, int score, String answer, String[] choiceArray) {
 
 **Use the Random class**  
-Line 81>
+Line 56 in Questions.java>
 int randChoiceOne = rand.nextInt(14) + 1;
 int randChoiceTwo = rand.nextInt(14) + 1;
 int randChoiceThree = rand.nextInt(14) + 1;
